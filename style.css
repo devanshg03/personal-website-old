@@ -143,8 +143,9 @@ h2 {
 .intro {
     background-color: #272b28;
     width: 100%;
-    display: grid;
-    grid-template-columns: 3fr 1fr;
+    display: flex;
+    justify-content: left;
+    align-items: center;
 }
 
 .description {
@@ -152,6 +153,7 @@ h2 {
     flex-direction: column;
     justify-content: center;
     padding: 22px;
+    min-width: 280px;
 }
 
 .description h2 {
@@ -192,10 +194,11 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .image-box img {
-    width: 40vw;
+    min-height: 400px;
 }
 
 .projects {
@@ -223,7 +226,7 @@ h2 {
     color: #f6f0f3;
 }
 
-.projects li a:hover {
+.projects li a:hover, .projects li a:active {
     padding-left: 20px;
     transition: ease-in-out 0.3s;
 }
@@ -237,7 +240,7 @@ h2 {
     overflow: hidden;
 }
 
-.projects li:hover p {
+.projects li:hover p, .projects li:hover p{
     transition: max-height 0.5s ease-in-out;
     max-height: 500px;
 }
