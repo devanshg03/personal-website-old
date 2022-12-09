@@ -48,6 +48,7 @@ q:before, q:after {
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
 a {
@@ -145,48 +146,46 @@ h2 {
 
 .intro {
     background-color: #272b28;
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    width: 100%;
+    padding: 32px 8%;
+    padding-bottom: 0;
+    display: grid;
+    grid-template-columns: 1fr;
 }
 
 .description {
-    padding-top: 50px;
-    padding-bottom: 50px;
-    margin-right: 8%;
-    width: 42%;
+    align-self: center;
+    justify-self: center;
 }
 
 .description h2 {
-    font-size: 28px;
+    font-size: 42px;
 }
 
 .description p {
     margin-top: 12px;
     color: #f6f0f3;
     line-height: 28px;
-    font-size: 21px;
+    font-size: 28px;
 }
 
-.description a {
+.intro a {
     display: block;
     text-align: center;
-    margin-top: 12.4px;
+    margin-top: 8px;
+    margin-bottom: 16px;
     background-color: #39a5e4;
     width: 98px;
     padding: 12px;
-    border-radius: 6px;
+    border-radius: 8px;
     text-decoration: none;
     color: #f6f0f3;
     box-shadow: 2px 2px 12px #2b668890;
+    align-self: center;
 }
 
 .intro img {
-    padding-top: 50px;
-    width: 42%;
-    margin-left: 8%;
-    max-width: 320px;
+    align-self: center;
+    justify-self: center;
 }
 
 .about {
@@ -222,7 +221,7 @@ h2 {
     background-color: #39a5e4;
     width: 128px;
     padding: 12px;
-    border-radius: 6px;
+    border-radius: 8px;
     text-decoration: none;
     color: #f6f0f3;
     box-shadow: 2px 2px 12px #2b668890;
@@ -293,7 +292,7 @@ h2 {
     object-fit:cover;
     width: 100%;
     height: 280px;
-    border-radius: 16px;
+    border-radius: 16px 16px 0 0;
 }
 
 .project a {
@@ -303,10 +302,9 @@ h2 {
     background-color: #39a5e4;
     width: 128px;
     padding: 12px;
-    border-radius: 6px;
+    border-radius: 8px;
     text-decoration: none;
     color: #f6f0f3;
-   float: bottom;
 }
 
 .footer {
@@ -344,6 +342,17 @@ h2 {
 .typed-fade-out {
 }
 
+.reveal{
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: 2s all ease;
+  }
+  .reveal.active{
+    transform: translateY(0);
+    opacity: 1;
+  }
+
 @media (min-width:769px)  {
     .projects-grid {
         margin-top: 32px;
@@ -356,6 +365,20 @@ h2 {
 }
 
 @media (min-width:1096px)  {
+
+    .intro {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .description {
+        justify-self: end;
+    }
+
+    .intro img {
+        justify-self: start;
+    }
+
     .projects-grid {
         margin-top: 32px;
         display: grid;

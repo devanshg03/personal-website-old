@@ -20,12 +20,12 @@
     </div>
     <section class="content">
         <div class="intro">
-            <img src="assets/home.png" alt="">
             <div class="description">
                 <h2>Hi, I'm Devansh!</h2>
                 <p>I'm <span class="type"></span>.</p>
                 <a href="">Learn More</a>
             </div>
+            <img src="assets/home.png" alt="">
         </div>
 
         <div class="about" id="about">
@@ -36,8 +36,8 @@
         </div>
 
         <div class="experience" id="experience">
-            <h3>Experience</h3>
-            <div class="exp-grid">
+            <h3 class="reveal">Experience</h3>
+            <div class="exp-grid reveal">
                 <h6>June 2022 - Present</h6>
                 <h6>Co-founder, Nola</h6>
                 <p>Co-founded a company that aims to make healthy, sustainable, and fresh snacks accessible to those with a busy lifestyle through their machine and food solutions.</p>
@@ -54,8 +54,8 @@
                 <h6>Partner, Hong Kong Student Ventures</h6>
                 <p>Hong Kong Student Ventures is a student-led pro-bono consulting firm that works on marketing and strategy solutions for NGOs, Charities and Startups.</p>
             </div>
-            <h3>Education</h3>
-            <div class="exp-grid">
+            <h3 class="reveal">Education</h3>
+            <div class="exp-grid reveal">
                 <h6>2021-2025</h6>
                 <h6>The University of Hong Kong</h6>
                 <p>Pursuing my Bachelor of Business Administration (BBA), majoring in Finance and with a second major in Entrepreneurship, Design and Innovation (EDI).</p>
@@ -72,7 +72,7 @@
         <div class="projects" id="projects">
             <h3>Projects</h3>
             <div class="projects-grid" >
-                <div class="project">
+                <div class="project reveal">
                     <img src="assets/nola.png" alt="">
                     <h6>Nola</h6>
                     <p>
@@ -84,7 +84,7 @@
                     <a href="">Coming Soon</a>
                 </div>
     
-                <div class="project">
+                <div class="project reveal">
                     <img src="assets/eso.png" alt="">
                     <h6>ESo Ventures</h6>
                     <p>
@@ -96,7 +96,7 @@
                     <a target=”_blank” href="https://entrepreneur-society-hku.webflow.io">Learn More</a>
                 </div>
                 
-                <div class="project">
+                <div class="project reveal">
                     <img src="assets/hksv.png" alt="">
                     <h6>Hong Kong Student Ventures</h6>
                     <p>
@@ -108,7 +108,7 @@
                     <a target=”_blank” href="https://www.hkstudentventures.com">Learn More</a>
                 </div>
     
-                <div class="project">
+                <div class="project reveal">
                     <img src="assets/vcmemo.png" alt="">
                     <h6>The VC Memo</h6>
                     <p>
@@ -119,7 +119,7 @@
                     <a target=”_blank” href="http://newsletters.thevcmemo.com">Learn More</a>
                 </div>
     
-                <div class="project">
+                <div class="project reveal">
                     <img src="assets/startr-up.png" alt="">
                     <h6>Startr Up</h6>
                     <p>
@@ -130,7 +130,7 @@
                     <a target=”_blank” href="https://github.com/devanshg03/Statr-Up">Learn More</a>
                 </div>
     
-                <div class="project">
+                <div class="project reveal">
                     <img src="assets/caesd.png" alt="">
                     <h6>CAESD</h6>
                     <p>
@@ -141,7 +141,7 @@
                     <a target=”_blank” href="https://web.archive.org/web/20220821071107/https://www.caesdhk.com/">Learn More</a>
                 </div>
     
-                <div class="project">
+                <div class="project reveal">
                     <img src="assets/xtrail.png" alt="">
                     <h6>@Nissan X-Trail Official</h6>
                     <p>
@@ -152,7 +152,7 @@
                     <a target=”_blank” href="https://www.instagram.com/nissanxtrailofficial">Learn More</a>
                 </div>
     
-                <div class="project">
+                <div class="project reveal">
                     <img src="assets/diecastgaming.png" alt="">
                     <h6>Diecast Gaming / Diecast Car Collector</h6>
                     <p>
@@ -177,6 +177,25 @@
     
     <script src="typed.js"></script>
     <script>
+        function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+
+        for (var i = 0; i < reveals.length; i++) {
+            var windowHeight = window.innerHeight;
+            var elementTop = reveals[i].getBoundingClientRect().top;
+            var elementVisible = 150;
+
+            if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+            } else {
+            reveals[i].classList.remove("active");
+            }
+        }
+        }
+
+        window.addEventListener("scroll", reveal);
+
+
         var typed = new Typed('.type', {
         strings: [
             'an Entrepreneur', 
